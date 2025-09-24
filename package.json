@@ -1,0 +1,26 @@
+{
+  "name": "stock_and_pedidos",
+  "version": "1.0.0",
+  "description": "API para Stock y Pedidos",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "test": "node src/app.js"
+  },
+  "keywords": [
+    "API",
+    "API_REST",
+    "Api_Clean_Architecture",
+    "Stock",
+    "Pedidos"
+  ],
+  "author": "YormanO",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.2",
+    "express": "^5.1.0",
+    "mongoose": "^8.18.2"
+  }
+}
