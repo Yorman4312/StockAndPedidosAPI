@@ -176,7 +176,7 @@ app.use(corsMiddleware);
  * Este handler asegura que el middleware CORS responda
  * correctamente a todas las peticiones preflight.
  */
-app.options("*", corsMiddleware)
+app.options("*", corsMiddleware);
 
 /**
  * MIDDLEWARE JSON PARSER
