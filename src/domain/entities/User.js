@@ -56,9 +56,12 @@ class User {
 
     if(!email || email.length < 8 || !email.includes("@")) throw new Error("❌ Email inválido ❌");
 
-    if(!password || password.length < 4) throw new Error("❌ Contrasena inválida ❌");
+    if(!password || password.length < 4) throw new Error("❌ Contraseña inválida ❌");
 
-    if(!rol || rol.length < 2) throw new Error("❌ Rol inválido ❌");
+    const allowedRoles = ["Administrador", "Vendedor"];
+    if(!rol || rol.length < 2 || !allowedRoles.includes(rol)) {
+      throw new Error(`❌ Rol inválido. Debe ser uno de: ${allowedRoles.join(", ")} ❌`);
+    }
 
     this.id = id;
     this.name = name;
