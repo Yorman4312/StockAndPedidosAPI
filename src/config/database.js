@@ -35,8 +35,13 @@ import mongoose from "mongoose";
 const connectDB = async () => {
   try {
     await mongoose.connect(process.env.MONGO_URI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true
+      // useNewUrlParser: true,
+      // useUnifiedTopology: true
+      serverSelectionTimeoutMS : 5000,
+      socketTimeoutMS : 45000,
+      family : 4,
+      keepAlive : true,
+      keepAliveInitialDelay : 300000
     });
     console.log("✅ Conectado a MongoDB ✅");
   } catch (err) {
