@@ -33,6 +33,7 @@ export const createOrderDetails = async (req, res) => {
     const orderDetails = await createOrderDetails.execute(req.body);
     res.status(201).json(orderDetails);
   } catch (err) {
+    console.error(err); // Esto mostrará el stacktrace
     res.status(500).json({ error: err.message });
   }
 };
@@ -50,6 +51,7 @@ export const getOrderDetails = async (req, res) => {
     const orderDetails = await getOrderDetails.execute();
     res.json(orderDetails);
   } catch (err) {
+    console.error(err); // Esto mostrará el stacktrace
     res.status(500).json({ error: err.message });
   }
 };
@@ -68,6 +70,7 @@ export const getOrderDetailsById = async (req, res) => {
     if (!orderDetails) return res.status(404).json({ message: "Pedido no encontrado" });
     res.json(orderDetails);
   } catch (err) {
+    console.error(err); // Esto mostrará el stacktrace
     res.status(500).json({ error: err.message });
   }
 };
@@ -91,6 +94,7 @@ export const updateOrderDetails = async (req, res) => {
     if (!orderDetails) return res.status(404).json({ message: "Pedido no encontrado" });
     res.json(orderDetails);
   } catch (err) {
+    console.error(err); // Esto mostrará el stacktrace
     res.status(500).json({ error: err.message });
   }
 };

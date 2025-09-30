@@ -29,6 +29,7 @@ export const createProduct = async (req, res) => {
     const product = await createProduct.execute(req.body);
     res.status(201).json(product);
   } catch (err) {
+    console.error(err); // Esto mostrará el stacktrace
     res.status(500).json({ error: err.message });
   }
 };
@@ -46,6 +47,7 @@ export const getProduct = async (req, res) => {
     const product = await getProduct.execute();
     res.json(product);
   } catch (err) {
+    console.error(err); // Esto mostrará el stacktrace
     res.status(500).json({ error: err.message });
   }
 };
@@ -64,6 +66,7 @@ export const getProductById = async (req, res) => {
     if (!product) return res.status(404).json({ message: "Producto no encontrado" });
     res.json(product);
   } catch (err) {
+    console.error(err); // Esto mostrará el stacktrace
     res.status(500).json({ error: err.message });
   }
 };
@@ -82,6 +85,7 @@ export const updateProduct = async (req, res) => {
     if (!product) return res.status(404).json({ message: "Producto no encontrado" });
     res.json(product);
   } catch (err) {
+    console.error(err); // Esto mostrará el stacktrace
     res.status(500).json({ error: err.message });
   }
 };
@@ -100,6 +104,7 @@ export const deleteProduct = async (req, res) => {
     if (!result) return res.status(404).json({ message: "Producto no encontrado" });
     res.json({ message: "✅ Producto eliminado correctamente ✅" });
   } catch (err) {
+    console.error(err); // Esto mostrará el stacktrace
     res.status(500).json({ error: err.message });
   }
 };

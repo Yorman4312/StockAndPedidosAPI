@@ -87,6 +87,7 @@ export const createOrder = async (req, res) => {
 
     res.status(201).json(order);
   } catch (err) {
+    console.error(err); // Esto mostrará el stacktrace
     res.status(500).json({ error: err.message });
   }
 };
@@ -101,6 +102,7 @@ export const getOrder = async (req, res) => {
     const order = await getOrder.execute();
     res.json(order);
   } catch (err) {
+    console.error(err); // Esto mostrará el stacktrace
     res.status(500).json({ error: err.message });
   }
 };
@@ -118,6 +120,7 @@ export const getOrderById = async (req, res) => {
 
     res.json(order);
   } catch (err) {
+    console.error(err); // Esto mostrará el stacktrace
     res.status(500).json({ error: err.message });
   }
 };
@@ -140,6 +143,7 @@ export const updateOrder = async (req, res) => {
 
     res.json(order);
   } catch (err) {
+    console.error(err); // Esto mostrará el stacktrace
     res.status(500).json({ error: err.message });
   }
 };
@@ -157,6 +161,7 @@ export const deleteOrder = async (req, res) => {
 
     res.json({ message: "✅ Pedido eliminado correctamente ✅" });
   } catch (err) {
+    console.error(err); // Esto mostrará el stacktrace
     res.status(500).json({ error: err.message });
   }
 };

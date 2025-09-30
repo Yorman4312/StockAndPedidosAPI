@@ -63,6 +63,7 @@ export default class LoginController {
       const { token, user } = await loginUser.execute(req.body);
       res.json({ token, user });
     } catch (err) {
+      console.error(err); // Esto mostrará el stacktrace
       res.status(401).json({ error: err.message });
     }
   }

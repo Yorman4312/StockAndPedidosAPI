@@ -31,6 +31,7 @@ export const createUser = async (req, res) => {
     const user = await createUser.execute(req.body);
     res.status(201).json(user);
   } catch (err) {
+    console.error(err); // Esto mostrará el stacktrace
     res.status(500).json({ error: err.message });
   }
 };
@@ -48,6 +49,7 @@ export const getUser = async (req, res) => {
     const user = await getUser.execute();
     res.json(user);
   } catch (err) {
+    console.error(err); // Esto mostrará el stacktrace
     res.status(500).json({ error: err.message });
   }
 };
@@ -66,6 +68,7 @@ export const getUserById = async (req, res) => {
     if (!user) return res.status(404).json({ message: "Usuario no encontrado" });
     res.json(user);
   } catch (err) {
+    console.error(err); // Esto mostrará el stacktrace
     res.status(500).json({ error: err.message });
   }
 };
@@ -84,6 +87,7 @@ export const updateUser = async (req, res) => {
     if (!user) return res.status(404).json({ message: "Usuario no encontrado" });
     res.json(user);
   } catch (err) {
+    console.error(err); // Esto mostrará el stacktrace
     res.status(500).json({ error: err.message });
   }
 };
@@ -102,6 +106,7 @@ export const deleteUser = async (req, res) => {
     if (!result) return res.status(404).json({ message: "Usuario no encontrado" });
     res.json({ message: "✅ Usuario eliminado correctamente ✅" });
   } catch (err) {
+    console.error(err); // Esto mostrará el stacktrace
     res.status(500).json({ error: err.message });
   }
 };
